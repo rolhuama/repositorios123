@@ -1,0 +1,12 @@
+version: '2'
+services:
+  helloapp:
+    image: domix/helloapp:0.0.4
+    ports:
+      - 8080:8080
+    environment:
+      - STRINGAPP=http://stringapp:8080
+    depends_on:
+      - stringapp
+  stringapp:
+    image: domix/stringapp:0.0.1

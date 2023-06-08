@@ -1,0 +1,1 @@
+docker build -t domix/helloapp:0.0.4 .

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  # El sufijo 0404 se refiere a clase 04 y laboratorio 04
+  name: stringapp0404
+data:
+  hello: "Hola Mundo desde Kubernetes!"

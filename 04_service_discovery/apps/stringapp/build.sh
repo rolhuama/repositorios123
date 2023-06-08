@@ -1,0 +1,1 @@
+docker build -t domix/stringapp:0.0.1 .

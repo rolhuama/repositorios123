@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  # El sufijo 0403 se refiere a clase 04 y laboratorio 03
+  name: stringapp0404
+  labels:
+    app: stringapp0404
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: stringapp0404
+  template:
+    metadata:
+      labels:
+        app: stringapp0404
+    spec:
+      containers:
+        - name: stringapp0404
+          image: domix/stringapp:0.0.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: HELLO
+              valueFrom:
+                configMapKeyRef:
+                  name: stringapp0404
+                  key: hello

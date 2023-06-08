@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  # El sufijo 0404 se refiere a clase 04 y laboratorio 04
+  name: helloapp0404
+  labels:
+    app: helloapp0404
+spec:
+  selector:
+    matchLabels:
+      app: helloapp0404
+  template:
+    metadata:
+      labels:
+        app: helloapp0404
+    spec:
+      containers:
+        - name: helloapp0404
+          image: domix/helloapp:0.0.4
+          ports:
+            - containerPort: 8080
+          env:
+            - name: STRINGAPP
+              valueFrom:
+                configMapKeyRef:
+                  name: helloapp0404
+                  key: stringapp

@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  # El sufijo 0403 se refiere a clase 04 y laboratorio 03
+  name: helloapp0404
+spec:
+  type: LoadBalancer
+  selector:
+    # Esta etiqueta la usa k8s para buscar el pod
+    # al que le enviara el trafico. Un error aqui 
+    # hara que no funcione el ruteo.
+    app: helloapp0404
+  ports:
+  - protocol: TCP
+    port: 8080

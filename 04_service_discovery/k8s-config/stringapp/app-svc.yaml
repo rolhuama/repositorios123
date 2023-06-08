@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: stringapp0404
+spec:
+  selector:
+    # Esta etiqueta la usa k8s para buscar el pod
+    # al que le enviara el trafico. Un error aqui 
+    # hara que no funcione el ruteo.
+    app: stringapp0404
+  ports:
+  - protocol: TCP
+    port: 8080
